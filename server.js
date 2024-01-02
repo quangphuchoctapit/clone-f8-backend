@@ -10,7 +10,7 @@ const mongodb_url = process.env.MONGODB_URL
 
 const app = express()
 
-app.use(express.json())
+app.use(express.json({ limit: '50mb' }));
 app.use(cors({
     origin: react_url,
     methods: ['GET', 'POST', 'PUT', 'DELETE'],

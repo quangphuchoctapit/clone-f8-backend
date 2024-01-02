@@ -65,7 +65,11 @@ const handleCreateNewCourse = async (data) => {
         const newCourse = {
             name: data.name,
             detail: data.detail,
-            description: data.description
+            description: data.description,
+            image: data?.image,
+            is_pro: data?.is_pro,
+            price: data?.price,
+            sub_image: data?.sub_image,
         }
         const course = await Course.create(newCourse)
         if (course) {
